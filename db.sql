@@ -1,0 +1,18 @@
+CREATE TABLE users(
+    id VARCHAR(64) NOT NULL,
+    fullname VARCHAR(32),
+    email VARCHAR(64) NOT NULL,
+    password VARCHAR(64) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP,
+    PRIMARY KEY(id)
+);
+
+
+CREATE TABLE messages(
+    id INT PRIMARY KEY NOT NULL GENERATED ALWAYS AS IDENTITY
+    message VARCHAR(128) NOT NULL,
+    sender_id VARCHAR(64),
+    receiver_id VARCHAR(64),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)
